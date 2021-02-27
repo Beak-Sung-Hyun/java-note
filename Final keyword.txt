@@ -1,0 +1,18 @@
+Final method는 재정의(Override)가 불가능하다.
+
+예시
+public class Parent {
+	public final void show() {
+		System.out.println("Hi");
+	}
+}
+
+public calss Main extends Parent {
+	//Override(해당 method가 final이므로 오류가 발생한다.)
+	public void show() {
+		System.out.println("Hello");
+	}
+}
+
+
+Final class는 상속이 불가능하다.

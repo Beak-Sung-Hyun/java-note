@@ -1,0 +1,38 @@
+interface 작성 예시
+interface Contract {
+	public String method1(String param);
+	public int method2(int param);
+}
+
+
+interface를 상속할 때에는 interface 안에 구현되어있는 method를 overridding 해야 한다.
+즉 아래와 같은 코드는 동작하지 않는다.
+class Concreate1 implements Contract {}
+
+
+class Concreate1이 Contract를 implement 했으므로 그 안의 method를 "구현"해야 한다.
+즉 아래와 같이 코드를 작성해야 한다.
+class Concreate1 implements Contract {
+	public String method1(String param) {
+		return "foo";
+	}
+	public int method2(int param) {
+		return 1;
+	}
+}
+
+
+interface: 다중 상속 구현이 가능하다.(implements interface1, interface2 가능)
+interface는 반드시 사전에 정의된 추상 메소드와 상수만을 가질 수 있다.
+즉 interface 안에서는 설계만 가능하다.
+상속할 때에는 implements를 사용한다.
+
+예시
+public class Dog {
+	//가능
+	abstract void crying();
+	//불가능
+	public void show() {
+		System.out.println("Hello World");
+	}
+}

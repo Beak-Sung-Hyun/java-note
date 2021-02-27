@@ -1,0 +1,41 @@
+추상
+추상 클래스를 사용하려면 꼭 상속을 받아야 한다.
+상속 받은 모든 추상 메소드는 반드시 구현해주어야 한다.(Override)
+추상 클래스는 추상 메소드 외의 변수나 일반 메소드를 가질 수 있다.
+public method가 존재한다면 반드시 추상 클래스 내에서 구현을 해야한다.
+상속할 때에는 extends를 사용한다.
+다중 상속이 불가능하다.
+
+추상 클래스 예시
+abstract class Player {
+	abstract void play(String songName);
+	abstract void pause();
+	abstract void stop();
+}
+
+public class Main extends Player {
+	public static void main(String[] args) {
+		play("songName");
+		//오류가 발생한다
+		//static 안에서는 static인 method를 실행할 수 있는데 아래의 method들은 static이 아니므로 오류가 발생한다.
+		
+		//해결법
+		Main main = new Main();  //인스턴스를 생성한다.
+		main.play("songName");  //오류가 발생하지 않는다.
+	}
+	
+	//Override
+	void play(String songName) {
+		System.out.println(songName + " 곡을 재생합니다.");
+	}
+	
+	//Override
+	void pause() {
+		System.out.println("곡을 일시 정지합니다.");
+	}
+	
+	//Override
+	void stop() {
+		System.out.println("곡을 정지합니다.");
+	}
+}

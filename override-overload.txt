@@ -1,0 +1,33 @@
+Override
+부모 클래스의 method 안의 내용을 재정의 하는 것(덮어 씌기하는 것)
+parameter는 수정하지 않는다.
+예시
+class Cal {
+	public int sum(int v1, int v2) {
+		return v1 + v2;
+	}
+}
+
+class Cal3 extends Cal {
+	public int sum(int v1, int v2) {
+		//Overridding
+		System.out.println("Cal3!!");
+		return v1 + v2;
+	}
+}
+
+
+Overload
+부모 클래스의 method의 parameter를 변경하는 것(자신의 클래스도 가능하다.)
+class Cal {
+	public int sum(int v1, int v2) {
+		return v1 + v2;
+	}
+}
+
+class Cal3 extends Cal {
+	//Overload
+	public int sum(int v1, int v2, int v3) {
+		return v1 + v2 + v3;
+	}
+}

@@ -1,0 +1,17 @@
+생성자 예시
+class Cal {
+	int v1, v2;
+	//생성자 생성
+	Cal (int v1, int v2) {
+		this.v1 = v1;  //this를 이용해 Cal의 int v1 값 지정
+		this.v2= v2;  //this를 이용해 Cal의 int v2 값 지정
+	}
+}
+
+class Cal3 extends Cal {
+	//아래의 생성자를 생성하지 않으면 오류가 발생한다.
+	Cal3(int v1, int v2) {
+		super(v1, v2);  //부모 클래스의 Cal(int v1, int v2) 호출
+		System.out.println("Cal3 init!!");  //왼쪽과 같이 추가적인 내용도 작성이 가능하다.
+	}
+}

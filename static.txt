@@ -1,0 +1,30 @@
+static이 붙어 있으면 class 소속이다.
+static이 붙어 있지 않으면 instance 소속이다.
+
+
+class Foo {
+	public static String classVar = "I class var";
+	public String instanceVar = "I instance var";
+}
+
+public class StaticApp {
+	public static void main(String[] args) {
+		System.out.println(Foo.classVar);
+		//OK(class를 통해서 클래스 변수에 접근하는 것은 가능하다.)
+		System.out.println(Foo.instanceVar);
+		//Error(class를 통해서 인스턴스 변수에 접근하는 것은 불가능하다.)
+	}
+}
+
+
+정리
+class를 통해서는 instance에 접근이 불가능하다.
+instance를 통해 클래스에 접근하는 것은 가능하다.(instance method를 통해 클래서 변수에 접근하는 것은 가능하다.)
+
+
+
+예시
+Foo f1 = new Foo();  //f1으로 instance 생성
+
+instance f1에서 static 형태의 값을 변경하면, class Foo에서 그 값이 변경된다.
+하지만 class Foo에서 특정 값을 변경하면 모든 instance에 적용된다.

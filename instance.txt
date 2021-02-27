@@ -1,0 +1,19 @@
+public class myOOP {
+	Print p1 = new Print();    //p1 = intsatnce
+	p1.delimeter = "----";
+	p1.A();
+	p1.B();
+}
+
+
+class Print {}    //class Print가 static이면 instance에서 사용이 불가능하다.
+
+
+정리
+인스턴스는 클래스 멤버들의 static을 제거한 후 활용한다.
+인스턴스는 class를 복제한 것이라 생각하면 된다.
+값을 유동적으로 바꾸고자 할 때, 여러 코드를 중복적으로 짜지 않아도 복제된 인스턴스를 통해 클래스 안의 멤버들을 독립적으로 갖다 쓸 수 있다.
+그리고 변경도 가능하다.
+
+문법
+클래스 이름 = new 클래스();
